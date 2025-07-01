@@ -4,22 +4,31 @@
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
+    "dev:webpack": "next dev",
+    "dev:trace": "cross-env NEXT_TURBOPACK_TRACING=1 NEXT_CPU_PROF=1 NODE_OPTIONS='--inspect' next dev --turbopack",
+    "trace": "next internal turbo-trace-server .next/trace-turbopack",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
   },
   "dependencies": {
+    "@reown/appkit": "1.7.11",
+    "@reown/appkit-adapter-wagmi": "1.7.11",
+    "@tanstack/react-query": "5.81.5",
+    "next": "15.3.4",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "next": "15.3.4"
+    "viem": "2.31.6",
+    "wagmi": "2.15.6"
   },
   "devDependencies": {
-    "typescript": "^5",
+    "@eslint/eslintrc": "^3",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "cross-env": "7.0.3",
     "eslint": "^9",
     "eslint-config-next": "15.3.4",
-    "@eslint/eslintrc": "^3"
+    "typescript": "^5"
   }
 }
